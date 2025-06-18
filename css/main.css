@@ -1,0 +1,251 @@
+@import "./reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
+:root {
+    --font-size-large: 60px;
+    --font-size-medium: 48px;
+    --font-size-base: 32px;
+    --font-size-small: 20px;
+
+    --font-weight-large: 800;
+    --font-weight-medium: 600;
+    --font-weight-base: 400;
+    --font-weight-low: 300;
+
+    --bg-main: #1f1f1f;
+    --bg-second: #181818;
+    --border: #2b2b2b;
+    --text: #cccccc;
+    --accent: #dd7831;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --font-size-large: 32px;
+        --font-size-medium: 28px;
+        --font-size-base: 20px;
+        --font-size-small: 16px;
+    }
+}
+
+
+html, body {
+    background-color: var(--bg-main);
+    color: var(--text);
+
+    font-family: "Inconsolata", monospace;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 5%;
+
+    width: 80%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 0 5%;
+
+    column-gap: 30px;
+    row-gap: 20px;
+}
+
+/* Nav */
+
+nav {
+    padding: 20px 0;
+
+    background-color: var(--bg-second);
+    border-bottom: 1px solid var(--border); 
+}
+
+.logo {
+    color: var(--text);
+
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-base);
+}
+
+.logo strong {
+    color: var(--accent);
+
+    font-weight: var(--font-weight-medium);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    row-gap: 15px;
+    column-gap: 20px;
+    
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-base);
+}
+
+.nav-list__link {
+    color: var(--text);
+    transition: opacity 0.1s ease-in;
+}
+
+.nav-list__link:hover {
+    opacity: 0.8;
+}
+
+.nav-list__link--active {
+    position: relative;
+}
+
+.nav-list__link--active::after {
+    content: "";
+    display: block;
+
+    height: 2px;
+    width: 100%;
+
+    position: absolute;
+    top: 105%;
+
+    background-color: var(--accent);
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 40px 0;
+
+    min-height: 400px;
+    width: 100%;
+
+    background-color: var(--bg-second);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.header__container {
+    margin: 0 auto;
+    padding: 60px 15px;
+
+    max-width: 600px;
+
+    background-image: url("./../images/header-background.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+
+.header__title {
+    margin-bottom: 20px;
+
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-large);
+    /* letter-spacing: 1px; */
+    /* line-height: 1; */
+}
+
+.header__title em {
+    color: var(--accent);
+
+    font-style: normal;
+}
+
+.header__container p {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-base);
+    line-height: 1.4;
+}
+
+.header__container p + p {
+    margin-top: 0.5em;
+}
+
+/* Main */
+
+main {
+    background-color: var(--bg-main);
+    color: var(--text);
+}
+
+.block {
+    padding: 40px 0;
+
+    /* border-bottom: 1px solid var(--border); */
+}
+
+.title {
+    margin-bottom: 20px;
+
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+
+    color: var(--accent);
+
+    text-align: center;
+}
+
+.block + .block {
+    border-top: 1px solid var(--border);
+}
+
+.block p {
+    padding: 0 10%;
+
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-base);
+    text-align: center;
+}
+
+/* Footer */
+
+footer {
+    padding: 60px 0 50px;
+
+    background-color: var(--bg-second);
+    color: var(--text);
+    border-top: 1px solid var(--border);
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    row-gap: 30px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    row-gap: 15px;
+    column-gap: 30px;
+}
+
+.social__link {
+    color: var(--accent);
+
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+}
+
+.copyright {
+    color: var(--text);
+
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-low);
+}

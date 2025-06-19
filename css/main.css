@@ -182,13 +182,19 @@ main {
 }
 
 .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     padding: 40px 0;
+
+    row-gap: 10px;
 
     /* border-bottom: 1px solid var(--border); */
 }
 
 .title {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-medium);
@@ -209,6 +215,12 @@ main {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-base);
     text-align: center;
+}
+
+.block img {
+    /* padding: 0 100px; */
+
+    max-width: 80%;
 }
 
 /* Footer */

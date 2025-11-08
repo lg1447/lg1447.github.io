@@ -72,7 +72,7 @@ function openProjectModal(projectId) {
                 </div>
                 <div style="margin-top: 20px;">
                     <a href="${project.url}" class="btn" target="_blank">Демо</a>
-                    <a href="${project.github}" class="btn" target="_blank" style="margin-left: 10px;">GitHub</a>
+                    ${project.github != null ? '<a href="${project.github}" class="btn" target="_blank" style="margin-left: 10px;">GitHub</a>' : ''}
                 </div>
             </div>
         `;
